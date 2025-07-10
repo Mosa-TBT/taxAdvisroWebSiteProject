@@ -2,6 +2,18 @@
 
 @section("content")
 
+    @php 
+
+        if (App\Models\ContactDetails::first()) {
+
+            $whatsapp = App\Models\ContactDetails::first()->whatsapp;
+
+        }else {
+            $whatsapp = null;
+        }
+
+    @endphp
+
     <!-- Hero Section -->
     <section class="hero-section position-relative overflow-hidden" style="background-color: #0B1F3A;">
         <div class="container py-5 position-relative z-2">

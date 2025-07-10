@@ -16,7 +16,6 @@ class PagesController extends Controller
             'services' => Service::limit(6)->get(),
             'trustReasons' => TrustReason::all(),
             "hero" => HeroSection::where("page", "home")->first(),
-            "whatsapp" => ContactDetails::first()->whatsapp
         ]);
 
     }
@@ -25,7 +24,6 @@ class PagesController extends Controller
 
         return view('services', [
             'services' => Service::all(),
-            "whatsapp" => ContactDetails::first()->whatsapp,
             "hero" => HeroSection::where("page", "services")->first(),
         ]);
 
@@ -35,12 +33,10 @@ class PagesController extends Controller
 
         return view('about', [
             "sections" => AboutPageContent::all(),
-            "whatsapp" => ContactDetails::first()->whatsapp,
             "hero" => HeroSection::where("page", "about")->first(),
         ]);
 
     }
-
 
     public function showContact() {
 

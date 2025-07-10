@@ -2,6 +2,19 @@
 
 @section("content")
 
+
+    @php 
+
+        if (App\Models\ContactDetails::first()) {
+
+            $whatsapp = App\Models\ContactDetails::first()->whatsapp;
+
+        }else {
+            $whatsapp = null;
+        }
+
+    @endphp
+
     <!-- Hero Section -->
     <section class="text-white py-5" style="background-color: #0B1F3A;">
         <div class="container">
