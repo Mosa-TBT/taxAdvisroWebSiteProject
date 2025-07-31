@@ -4,8 +4,6 @@ namespace Database\Seeders;
 
 use Database\Seeders\AboutPageContentSeeder;
 use Illuminate\Database\Seeder;
-use Database\Seeders\SiteContentSeeder;
-use Database\Seeders\AboutSectionSeeder;
 use Database\Seeders\ServiceSeeder;
 use Database\Seeders\TrustReasonSeeder;
 
@@ -19,9 +17,10 @@ class DatabaseSeeder extends Seeder
 public function run(): void
 {
     $this->call([
+        AboutPageContentSeeder::class,
         ServiceSeeder::class,
         TrustReasonSeeder::class,
-        AboutPageContentSeeder::class,
+        // Add other seeders here as needed
     ]);
 }
 
